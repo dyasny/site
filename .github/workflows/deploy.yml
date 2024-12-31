@@ -1,0 +1,37 @@
+name: Scrape and Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      # Step 3: Install dependencies
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
+      # Step 4: Scrape LinkedIn profile
+      - name: Scrape LinkedIn Profile
+        run: node scraper.js
+
+      # Step 5: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./  # Root directory
+
