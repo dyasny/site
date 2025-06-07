@@ -12,21 +12,7 @@ jobs:
     steps:
       # Step 1: Checkout code
       - name: Checkout repository
-        uses: actions/checkout@v3
-
-      # Step 2: Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "18"
-
-      # Step 3: Install dependencies
-      - name: Install Puppeteer
-        run: npm install puppeteer
-
-      # Step 4: Scrape LinkedIn profile
-      - name: Scrape LinkedIn Profile
-        run: node scraper.js
+        uses: actions/checkout@v4
 
       # Step 5: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
@@ -34,5 +20,3 @@ jobs:
         with:
           publish_dir: ./  # Root directory
           deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-
-
