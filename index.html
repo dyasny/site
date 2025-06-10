@@ -3,475 +3,588 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Chen - DevOps & Infrastructure Engineer</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css">
+    <title>Dan Yasny - CV</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .job { page-break-inside: avoid; }
+            .education-item { page-break-inside: avoid; }
+            .skill-category { page-break-inside: avoid; }
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.4;
+            color: #333;
+            max-width: 210mm;
+            margin: 0 auto;
+            padding: 20mm;
+            background: white;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .name {
+            font-size: 2.2em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .title {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .contact-info {
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            border-bottom: 1px solid #bdc3c7;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .job {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dotted #ecf0f1;
+        }
+
+        .job:last-child {
+            border-bottom: none;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.05em;
+        }
+
+        .company {
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 3px;
+        }
+
+        .job-duration {
+            color: #7f8c8d;
+            font-size: 0.9em;
+            white-space: nowrap;
+        }
+
+        .job-location {
+            color: #95a5a6;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .job-description {
+            margin-top: 8px;
+            text-align: justify;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+
+        .skill-category h4 {
+            margin: 0 0 8px 0;
+            color: #2c3e50;
+            font-size: 0.95em;
+        }
+
+        .skill-category p {
+            margin: 0;
+            font-size: 0.9em;
+            line-height: 1.3;
+        }
+
+        .education-item {
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px dotted #ecf0f1;
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .education-title {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .education-institution {
+            color: #34495e;
+            margin-bottom: 3px;
+        }
+
+        .education-year {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 8px;
+        }
+
+        .cert-item {
+            background: #ecf0f1;
+            padding: 8px 12px;
+            border-radius: 3px;
+            text-align: center;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .languages {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .language-item {
+            background: #f8f9fa;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            color: #333;
+            font-weight: bold;
+        }
+
+        ul {
+            margin: 8px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="nav-brand">
-                <svg class="brand-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect width="20" height="8" x="2" y="2" rx="2" ry="2"/>
-                    <rect width="20" height="8" x="2" y="14" rx="2" ry="2"/>
-                    <line x1="6" x2="6" y1="6" y2="10"/>
-                    <line x1="6" x2="6" y1="18" y2="22"/>
-                </svg>
-                <span class="brand-text">Alex Chen</span>
-            </div>
-            <nav class="nav-menu">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#services" class="nav-link">Services</a>
-                <a href="https://medium.com/@alexchen" target="_blank" rel="noopener noreferrer" class="nav-link">Blog</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="4"/>
-                        <path d="m12 2 0 2"/>
-                        <path d="m12 20 0 2"/>
-                        <path d="m4.93 4.93 1.41 1.41"/>
-                        <path d="m17.66 17.66 1.41 1.41"/>
-                        <path d="m2 12 2 0"/>
-                        <path d="m20 12 2 0"/>
-                        <path d="m6.34 17.66-1.41 1.41"/>
-                        <path d="m19.07 4.93-1.41 1.41"/>
-                    </svg>
-                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/>
-                    </svg>
-                </button>
-            </nav>
-            <button class="mobile-menu-toggle" id="mobileMenuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+    <div class="header">
+        <div class="name">Dan Yasny</div>
+        <div class="title">Infrastructure, Platform, DevOps and SRE Engineer</div>
+        <div class="contact-info">
+            Montreal, Quebec, Canada<br>
         </div>
-    </header>
+    </div>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero" class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1 class="hero-title">DevOps & Infrastructure Engineer</h1>
-                        <p class="hero-description">
-                            Passionate about building scalable, reliable infrastructure and automating complex systems.
-                            Specializing in cloud architecture, CI/CD pipelines, and modern DevOps practices.
-                        </p>
-                        <div class="hero-buttons">
-                            <a href="#contact" class="btn btn-primary">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                                    <polyline points="22,6 12,13 2,6"/>
-                                </svg>
-                                Get In Touch
-                            </a>
-                            <a href="https://medium.com/@alexchen" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                                </svg>
-                                Read My Blog
-                            </a>
-                        </div>
-                        <div class="social-links">
-                            <a href="#" class="social-link" aria-label="GitHub">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/>
-                                    <path d="M9 18c-4.51 2-5-2-7-2"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="social-link" aria-label="LinkedIn">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                                    <rect width="4" height="12" x="2" y="9"/>
-                                    <circle cx="4" cy="4" r="2"/>
-                                </svg>
-                            </a>
-                            <a href="#" class="social-link" aria-label="Twitter">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/>
-                                </svg>
-                            </a>
-                            <a href="https://medium.com/@alexchen" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Medium Blog">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
-                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="hero-image">
-                        <div class="image-container">
-                            <div class="image-glow"></div>
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face" alt="Alex Chen - DevOps Engineer" class="profile-image">
-                        </div>
-                    </div>
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <p>Experienced IT/Infrastructure engineer specializing in SRE, DevOps, Cloud, System Administration, Hardware, Software, Networking and Storage. Extensive knowledge of modern IT technologies, particularly in opensource Virtualization, Containerization, Big Data, Cloud computing, and Web3 infrastructure. Proven leadership skills with experience managing and developing teams while maintaining high quality standards and service awareness.</p>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Experience</div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="company">Irreducible</div>
+                    <div class="job-title">Staff Infrastructure Engineer</div>
+                    <div class="job-location">Canada</div>
                 </div>
+                <div class="job-duration">November 2024 - Present</div>
             </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">About Me</h2>
-                    <p class="section-description">
-                        With over 8 years of experience in DevOps and infrastructure engineering, I help organizations build
-                        robust, scalable systems that drive business growth. My expertise spans cloud platforms,
-                        containerization, automation, and modern deployment strategies.
-                    </p>
-                </div>
-                <div class="about-content">
-                    <div class="about-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
-                                </svg>
-                            </div>
-                            <div class="feature-content">
-                                <h3 class="feature-title">Cloud Architecture</h3>
-                                <p class="feature-description">
-                                    Designing and implementing scalable cloud solutions across AWS, Azure, and GCP platforms.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <line x1="6" x2="6" y1="3" y2="15"/>
-                                    <circle cx="18" cy="6" r="3"/>
-                                    <circle cx="6" cy="18" r="3"/>
-                                    <path d="m18 9 2.26-2.26a2.5 2.5 0 1 0-3.54-3.54L15 5"/>
-                                </svg>
-                            </div>
-                            <div class="feature-content">
-                                <h3 class="feature-title">CI/CD Pipelines</h3>
-                                <p class="feature-description">
-                                    Building automated deployment pipelines that reduce deployment time by 80% and eliminate manual errors.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
-                                </svg>
-                            </div>
-                            <div class="feature-content">
-                                <h3 class="feature-title">Security & Compliance</h3>
-                                <p class="feature-description">
-                                    Implementing security best practices and ensuring compliance with industry standards.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-image">
-                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=400&fit=crop" alt="Infrastructure Diagram" class="diagram-image">
-                    </div>
-                </div>
+            <div class="job-description">
+                Driving infrastructure and automation efforts across all fields:
+                <ul>
+                    <li>Kubernetes implementation and migration</li>
+                    <li>CI/CD for Go, Rust, Terraform, Ansible, Verilator and FPGA oriented pipelines</li>
+                    <li>Ground-up architecture for secure and scalable infrastructure across public clouds and baremetal datacentres</li>
+                    <li>Automated internal and competitive benchmarking</li>
+                    <li>AWS and GCP integration for infrastructure architecture and DevOps workflows</li>
+                    <li>GitHub org management and IaC automation</li>
+                </ul>
             </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="skills">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Technical Skills</h2>
-                    <p class="section-description">
-                        A comprehensive toolkit for modern infrastructure and DevOps practices.
-                    </p>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
-                            </svg>
-                        </div>
-                        <h3 class="skill-title">Cloud Platforms</h3>
-                        <div class="skill-badges">
-                            <span class="badge">AWS</span>
-                            <span class="badge">Azure</span>
-                            <span class="badge">Google Cloud</span>
-                            <span class="badge">DigitalOcean</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M2 20h20"/>
-                                <path d="m3 20 1.5-6.5L7 14l3.5-.5L14 16l3.5-4.5L21 12"/>
-                                <path d="M12 4v16"/>
-                            </svg>
-                        </div>
-                        <h3 class="skill-title">Containerization</h3>
-                        <div class="skill-badges">
-                            <span class="badge">Docker</span>
-                            <span class="badge">Kubernetes</span>
-                            <span class="badge">Helm</span>
-                            <span class="badge">OpenShift</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="16 18 22 12 16 6"/>
-                                <polyline points="8 6 2 12 8 18"/>
-                            </svg>
-                        </div>
-                        <h3 class="skill-title">Infrastructure as Code</h3>
-                        <div class="skill-badges">
-                            <span class="badge">Terraform</span>
-                            <span class="badge">Ansible</span>
-                            <span class="badge">CloudFormation</span>
-                            <span class="badge">Pulumi</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="6" x2="6" y1="3" y2="15"/>
-                                <circle cx="18" cy="6" r="3"/>
-                                <circle cx="6" cy="18" r="3"/>
-                                <path d="m18 9 2.26-2.26a2.5 2.5 0 1 0-3.54-3.54L15 5"/>
-                            </svg>
-                        </div>
-                        <h3 class="skill-title">CI/CD Tools</h3>
-                        <div class="skill-badges">
-                            <span class="badge">Jenkins</span>
-                            <span class="badge">GitLab CI</span>
-                            <span class="badge">GitHub Actions</span>
-                            <span class="badge">Azure DevOps</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect width="4" height="16" x="6" y="2"/>
-                                <rect width="4" height="16" x="14" y="2"/>
-                            </svg>
-                        </div>
-                        <h3 class="skill-title">Monitoring & Observability</h3>
-                        <div class="skill-badges">
-                            <span class="badge">Prometheus</span>
-                            <span class="badge">Grafana</span>
-                            <span class="badge">ELK Stack</span>
-                            <span class="badge">Datadog</span>
-                        </div>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <ellipse cx="12" cy="5" rx="9" ry="3"/>
-                                <path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/>
-                                <path d="M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
-                            </svg>
-                        </div>
-                        <h3 class="skill-title">Databases & Storage</h3>
-                        <div class="skill-badges">
-                            <span class="badge">PostgreSQL</span>
-                            <span class="badge">MongoDB</span>
-                            <span class="badge">Redis</span>
-                            <span class="badge">S3</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section id="experience" class="experience">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Experience</h2>
-                    <p class="section-description">
-                        Key achievements and projects that demonstrate my expertise in DevOps and infrastructure.
-                    </p>
-                </div>
-                <div class="experience-timeline">
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div class="experience-info">
-                                <h3 class="experience-title">Senior DevOps Engineer</h3>
-                                <p class="experience-company">TechCorp Inc. • 2021 - Present</p>
-                            </div>
-                            <span class="badge current">Current</span>
-                        </div>
-                        <ul class="experience-achievements">
-                            <li>Led migration of legacy infrastructure to AWS, reducing costs by 40%</li>
-                            <li>Implemented GitOps workflows using ArgoCD and Kubernetes</li>
-                            <li>Built comprehensive monitoring stack with Prometheus and Grafana</li>
-                            <li>Mentored junior engineers and established DevOps best practices</li>
-                        </ul>
-                    </div>
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div class="experience-info">
-                                <h3 class="experience-title">Infrastructure Engineer</h3>
-                                <p class="experience-company">StartupXYZ • 2019 - 2021</p>
-                            </div>
-                        </div>
-                        <ul class="experience-achievements">
-                            <li>Designed and deployed scalable Kubernetes clusters on GCP</li>
-                            <li>Automated deployment processes, reducing deployment time from hours to minutes</li>
-                            <li>Implemented infrastructure as code using Terraform</li>
-                            <li>Established security policies and compliance frameworks</li>
-                        </ul>
-                    </div>
-                    <div class="experience-card">
-                        <div class="experience-header">
-                            <div class="experience-info">
-                                <h3 class="experience-title">Systems Administrator</h3>
-                                <p class="experience-company">Enterprise Solutions Ltd. • 2016 - 2019</p>
-                            </div>
-                        </div>
-                        <ul class="experience-achievements">
-                            <li>Managed hybrid cloud infrastructure across AWS and on-premises</li>
-                            <li>Implemented backup and disaster recovery solutions</li>
-                            <li>Optimized system performance and reduced downtime by 95%</li>
-                            <li>Automated routine tasks using Python and Bash scripting</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Services Section -->
-        <section id="services" class="services">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Services</h2>
-                    <p class="section-description">
-                        Comprehensive DevOps and infrastructure services to accelerate your business.
-                    </p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Cloud Migration & Architecture</h3>
-                        <p class="service-description">
-                            Seamless migration to cloud platforms with optimized architecture design.
-                        </p>
-                        <ul class="service-features">
-                            <li>Cloud strategy and roadmap development</li>
-                            <li>Multi-cloud and hybrid cloud solutions</li>
-                            <li>Cost optimization and resource management</li>
-                            <li>Security and compliance implementation</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title">DevOps Automation</h3>
-                        <p class="service-description">
-                            End-to-end automation of development and deployment processes.
-                        </p>
-                        <ul class="service-features">
-                            <li>CI/CD pipeline design and implementation</li>
-                            <li>Infrastructure as Code (IaC) setup</li>
-                            <li>Automated testing and quality gates</li>
-                            <li>Release management and rollback strategies</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <rect width="4" height="16" x="6" y="2"/>
-                                <rect width="4" height="16" x="14" y="2"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Monitoring & Observability</h3>
-                        <p class="service-description">
-                            Comprehensive monitoring solutions for system reliability and performance.
-                        </p>
-                        <ul class="service-features">
-                            <li>Application and infrastructure monitoring</li>
-                            <li>Log aggregation and analysis</li>
-                            <li>Alerting and incident response</li>
-                            <li>Performance optimization and tuning</li>
-                        </ul>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M9 12l2 2 4-4"/>
-                                <path d="M21 12c.552 0 1-.448 1-1V5c0-.552-.448-1-1-1H3c-.552 0-1 .448-1 1v6c0 .552.448 1 1 1"/>
-                                <path d="M3 10v6c0 .552.448 1 1 1h16c.552 0 1-.448 1-1v-6"/>
-                            </svg>
-                        </div>
-                        <h3 class="service-title">Security & Compliance</h3>
-                        <p class="service-description">
-                            Robust security implementation and compliance management.
-                        </p>
-                        <ul class="service-features">
-                            <li>Security assessment and hardening</li>
-                            <li>Compliance framework implementation</li>
-                            <li>Identity and access management</li>
-                            <li>Vulnerability scanning and remediation</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Let's Work Together</h2>
-                    <p class="section-description">
-                        Ready to transform your infrastructure? Let's discuss how I can help your organization achieve its
-                        DevOps and cloud goals.
-                    </p>
-                </div>
-                <div class="contact-buttons">
-                    <a href="mailto:alex@example.com" class="btn btn-primary">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                        Email Me
-                    </a>
-                    <a href="#" class="btn btn-outline">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                            <rect width="4" height="12" x="2" y="9"/>
-                            <circle cx="4" cy="4" r="2"/>
-                        </svg>
-                        LinkedIn
-                    </a>
-                </div>
-                <p class="contact-note">Available for consulting and full-time opportunities</p>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p class="footer-text">© 2024 Alex Chen. All rights reserved.</p>
-            <nav class="footer-nav">
-                <a href="#" class="footer-link">Privacy Policy</a>
-                <a href="#" class="footer-link">Terms of Service</a>
-            </nav>
         </div>
-    </footer>
 
-    <script src="script.js"></script>
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="company">Figment</div>
+                    <div class="job-title">Lead DevOps Engineer</div>
+                    <div class="job-location">Canada</div>
+                </div>
+                <div class="job-duration">July 2024 - November 2024</div>
+            </div>
+            <div class="job-description">
+                Driving Automation and Operational Excellence in Blockchain Infrastructure<br>
+            <ul>
+                <li>Spearheading the automation of infrastructure and blockchain operations across multiple blockchain networks within a high-performance staking environment</li>
+                <li>Designing and implementing systems to support seamless scalability, reliability, and security for staking operations</li>
+                <li>Leading initiatives to enhance processes and workflows across the DevOps organization, with a strong emphasis on eliminating manual tasks, streamlining blockchain setup, and automating maintenance and upgrade procedures</li>
+                <li>Mentoring and providing technical guidance to team members and intra-team collaborators on a variety of complex topics, fostering a culture of continuous learning and knowledge-sharing</li>
+                <li>Collaborating closely with blockchain maintainers and developer communities to optimize performance and maximize staking rewards, leveraging deep expertise in blockchain protocols and infrastructure</li>
+                <li>Managing operations with a diverse set of T1 and T2 cloud and infrastructure providers, ensuring optimal resource utilization and performance across multi-cloud and hybrid environments</li>
+            </ul>
+                <strong>Technologies and Keywords:</strong><br>
+                Blockchain Platforms: Cosmos-SDK, Ethereum, The Graph, and other staking-focused networks.<br>
+                Automation and Infrastructure Tools: Ansible, Terraform, Helm, Python, Bash scripting.<br>
+                CI/CD and Deployment: GitHub Actions, Kubernetes Jobs, robust CI/CD pipelines.<br>
+                Containerization and Orchestration: Docker, Kubernetes, GKE, EC2, and bare-metal environments.<br>
+                Cloud and Infrastructure Providers: GCP, AWS, OVH, Servers.com, and other industry-leading providers.<br><br>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="company">Kraken Digital Asset Exchange</div>
+                    <div class="job-title">Senior Core Infrastructure/Performance/Site Reliability Engineer</div>
+                    <div class="job-location">Canada</div>
+                </div>
+                <div class="job-duration">September 2023 - July 2024</div>
+            </div>
+            <div class="job-description">
+                Core infrastructure and performance engineering role (details under NDA).
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="company">Turso</div>
+                    <div class="job-title">Senior Infrastructure Engineer/Cloud Architect/Platform Engineer</div>
+                    <div class="job-location">Canada</div>
+                </div>
+                <div class="job-duration">November 2021 - September 2023</div>
+            </div>
+            <div class="job-description">
+                Lead design and manage all things infrastructure: DevOps/SRE/Cloud/etc
+                <ul>
+                    <li>Design, implementation and maintenance of cloud and on-prem based deployments</li>
+                    <li>Participate in the overall product design from the infrastructure point of view</li>
+                    <li>Design and build the company's Managed Service offering</li>
+                    <li>Create, manage and expand the Turso E2E Automated testing suite</li>
+                    <li>Create, manage and continuously develop the CI/CD, Release and Test pipelines for various company products across a matrix of programming languages, target platforms and technologies</li>
+                </ul>
+                <strong>Keywords:</strong><br>
+                AWS, Azure, GCP; EKS, AKS, GKE, Kubernetes; Helm, Argo Workflows, ArgoCD, Jenkins, Tekton, Github Actions, Docker, Podman, ECR; Terraform, Ansible, Argo, Python, Bash, Rust, Golang; SQL, PostgreSQL, Distributed; Automation, Cloud, Infrastructure, DevOps, IaC, SRE; GCC, Make, Cargo, gorelease, nmake; Linux, MacOS, Windows; Everything in between
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="company">MayaData</div>
+                    <div class="job-title">Principal Field Engineer (DevOps/SRE/Stateful workloads on Kubernetes)</div>
+                    <div class="job-location">Remote (EST)</div>
+                </div>
+                <div class="job-duration">January 2021 - November 2021</div>
+            </div>
+            <div class="job-description">
+                Wearing many hats and participating in Product, Sales, SRE, SevOps, Business, Quality, Marketing, Community and other aspects of the company.<br><br>
+
+                Providing technical assistance to the Sales cycle around Kubernetes, Stateful workloads and of course high performance storage.<br><br>
+
+                Generating automatic Demo environments and workloads for specific customer requirements.<br><br>
+
+                Participating in various Product Management and planning cycles.<br><br>
+
+                <strong>Technical stack:</strong><br>
+                Python, Ansible, Terraform; AWS, Azure, GCP; Prometheus, Grafana, Loki; Kubernetes, K8S, Openshift, Kubespray, MicroK8S; CassandraDB, MinIO, ScyllaDB, PostgreSQL, MariaDB (in K8S); Mayastor (NVMe-oF, SPDK), OpenEBS (with various subsystems)
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="company">ScyllaDB</div>
+                    <div class="job-title">Head of Global Technical Support</div>
+                    <div class="job-location">Montreal, Quebec, Canada</div>
+                </div>
+                <div class="job-duration">September 2020 - November 2021</div>
+            </div>
+            <div class="job-description">
+                Establish and manage the global Techsupport team for ScyllaDB:
+                <ul>
+                    <li>Establish and document support procedures</li>
+                    <li>Define, formalize and configure customer interaction and support channels</li>
+                    <li>Interview, hire and manage a globally distributed team</li>
+                    <li>Establish ticketing, on-call rotation, escalation procedures and automated reporting</li>
+                    <li>Create an internal knowledge base dealing with customer specifics and contributing to the public technical KB</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="company">ScyllaDB</div>
+                    <div class="job-title">Senior Field Engineer</div>
+                    <div class="job-location">Montreal, Canada</div>
+                </div>
+                <div class="job-duration">July 2018 - January 2021</div>
+            </div>
+            <div class="job-description">
+                <ul>
+                    <li>Massive customer database deployments</li>
+                    <li>Technology blogs around Scylla</li>
+                    <li>Authored the scylla-ansible-roles</li>
+                    <li>Various automation, backup/restore, migration and support utilities supporting the Scylla stack</li>
+                    <li>Built and managed the Customer Support team</li>
+                </ul>
+                <strong>Keywords:</strong><br>
+                ScyllaDB, Cassandra, NoSQL, Spark, Prometheus, Grafana, Docker, Kubernetes (k8s), mesosphere, DCOS, AWS, GCP, Azure, Ansible, Bash, Python, Terraform, some Go and Scala and many many more.
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="company">Red Hat</div>
+                    <div class="job-title">Senior Quality Assurance Engineer SDET</div>
+                    <div class="job-location">Montreal, Canada</div>
+                </div>
+                <div class="job-duration">December 2015 - July 2018</div>
+            </div>
+            <div class="job-description">
+                Developing test automation for OpenShift, Kubernetes, with focus on KubeVirt, the K8S native VM launcher.<br><br>
+
+                Testing and automation of Openstack (RDO, RHEL OSP) deployments using Tripleo and OSP-Director.<br><br>
+
+                Testing, debugging and working with engineers to resolve issues in the entire OpenStack deployment process, from hardware configuration to working tenants and VMs<br><br>
+
+                <strong>Technology keywords:</strong><br>
+                OpenShift, KubeVirt, Container Native Virtualization (CNV), KVM, libvirt, Kubernetes, Docker, CRI-O, OpenStack, TripleO, Ansible, Python, Go/Golang, CI/CD (Continuous Integration/Deployment/Delivery), Jenkins, Docker, Puppet, Git, DevOps, Automation...and many more
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="company">Red Hat</div>
+                    <div class="job-title">Senior Technical Cloud Computing Solutions Architect</div>
+                    <div class="job-location">Montreal, Canada</div>
+                </div>
+                <div class="job-duration">May 2014 - December 2015</div>
+            </div>
+            <div class="job-description">
+                Automation of OpenStack deployments using eNovance Spinalstack (Puppet, Ansible, and various custom toolsets)<br><br>
+
+                RHEV, Cloud Forms and other hybrid cloud oriented technologies integration<br><br>
+
+                Data Centre design and maintenance for eNovance and Red Hat customers<br><br>
+
+                Providing technical response to arising customer issues around OpenStack deployments<br><br>
+
+                Participating in presales engagements for strategic customers
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="company">Self Employed</div>
+                    <div class="job-title">Data Centre Design and Management Consultant/Architect</div>
+                    <div class="job-location">Canada</div>
+                </div>
+                <div class="job-duration">May 2013 - May 2014</div>
+            </div>
+            <div class="job-description">
+                Designed, deployed and maintained company datacentres including firewalls, VPN access, networks, servers, virtualization systems, SAN systems, and various enterprise applications. Implemented monitoring, backup systems, and integrated company-specific systems.
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Earlier Career Experience</div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="company">Red Hat</div>
+                    <div class="job-title">Senior Technical Product Manager - Virtualization and Cloud</div>
+                    <div class="job-location">Israel</div>
+                </div>
+                <div class="job-duration">December 2011 - April 2013</div>
+            </div>
+            <div class="job-description">
+                Developed solutions for System Architects, ISV partners and customers. Created custom solutions for specific requirements, advanced RHEV/oVirt adoption, developed future feature concepts, and conducted competitive analysis.
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="company">Red Hat</div>
+                    <div class="job-title">Senior Software Maintenance Engineer</div>
+                    <div class="job-location">Israel</div>
+                </div>
+                <div class="job-duration">November 2008 - December 2011</div>
+            </div>
+            <div class="job-description">
+                Specialized in Red Hat Enterprise Virtualization (RHEV). Served as Subject Matter Expert, developed support tools and scripts, assisted in corporate setups, compiled knowledge base articles, and maintained internal laboratory for testing.
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="company">Dell Computers</div>
+                    <div class="job-title">Senior Server Analyst</div>
+                    <div class="job-location">UK/Ireland, Hebrew and Russian markets</div>
+                </div>
+                <div class="job-duration">September 2007 - September 2008</div>
+            </div>
+            <div class="job-description">
+                Provided technical support for Dell servers and products, diagnosed and troubleshot customer equipment, utilized analytical troubleshooting skills, and supported comprehensive Dell server ecosystem.
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="company">CogniTens</div>
+                    <div class="job-title">System Administrator and IT Manager</div>
+                    <div class="job-location">Israel</div>
+                </div>
+                <div class="job-duration">December 2006 - June 2007</div>
+            </div>
+            <div class="job-description">
+                Managed remote support systems, installed hardware and software for production robots, maintained Windows and Linux workstations, managed servers and networking infrastructure, and secured worldwide antivirus installations.
+            </div>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <div>
+                    <div class="company">Various Private Companies</div>
+                    <div class="job-title">Senior System Administrator</div>
+                    <div class="job-location">Israel</div>
+                </div>
+                <div class="job-duration">January 1994 - January 2006</div>
+            </div>
+            <div class="job-description">
+                Specialized in multiple operating systems, network design and implementation, backup and business continuity management, mail and messaging systems, web services, and hardware management across diverse technology stacks.
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Core Technical Skills</div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h4>Cloud & DevOps</h4>
+                <p>AWS, GCP, Azure, OpenStack, Terraform, Ansible, Jenkins, GitHub Actions, ArgoCD, CI/CD Pipelines</p>
+            </div>
+            <div class="skill-category">
+                <h4>Containers & Orchestration</h4>
+                <p>Kubernetes, OpenShift, Docker, EKS, AKS, GKE, Helm, Mesosphere, DC/OS, Nomad</p>
+            </div>
+            <div class="skill-category">
+                <h4>Virtualization</h4>
+                <p>KVM/QEMU, VMware ESX/ESXi, Hyper-V, Xen, RHV, oVirt, libvirt</p>
+            </div>
+            <div class="skill-category">
+                <h4>Programming & Scripting</h4>
+                <p>Python, Bash, Go, Rust, Ansible, Git, SQL, NoSQL</p>
+            </div>
+            <div class="skill-category">
+                <h4>Databases</h4>
+                <p>ScyllaDB, Cassandra, PostgreSQL, MySQL, MongoDB, MS-SQL</p>
+            </div>
+            <div class="skill-category">
+                <h4>Monitoring & Observability</h4>
+                <p>Prometheus, Grafana, Loki, Distributed tracing, Metrics collection</p>
+            </div>
+            <div class="skill-category">
+                <h4>Networking & Storage</h4>
+                <p>Cisco, Dell, HP equipment, SDN, iSCSI, NFS, FC, FCoE, Multipathing</p>
+            </div>
+            <div class="skill-category">
+                <h4>Blockchain & Web3</h4>
+                <p>Ethereum, Solana, Cosmos SDK, The Graph, Validator nodes, Staking infrastructure, Zero Knowledge proof infrastructure</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education</div>
+        <div class="education-item">
+            <div class="education-title">BA, Business Management</div>
+            <div class="education-institution">University of Derby</div>
+            <div class="education-year">2002 - 2005</div>
+        </div>
+        <div class="education-item">
+            <div class="education-title">VMware vSphere 5 Install, Configure, Manage (VCP5)</div>
+            <div class="education-institution">High Tech College Hertzlia</div>
+            <div class="education-year">2012</div>
+        </div>
+        <div class="education-item">
+            <div class="education-title">RHCE Bootcamp</div>
+            <div class="education-institution">Red Hat Training</div>
+            <div class="education-year">2010</div>
+        </div>
+        <div class="education-item">
+            <div class="education-title">CompTIA Network+</div>
+            <div class="education-institution">Self Study</div>
+            <div class="education-year">2007</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Certifications</div>
+        <div class="certifications">
+            <div class="cert-item">RHCVA</div>
+            <div class="cert-item">RHCE</div>
+            <div class="cert-item">Server+</div>
+            <div class="cert-item">Linux+</div>
+            <div class="cert-item">CNE</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Languages</div>
+        <div class="languages">
+            <div class="language-item">English (Native)</div>
+            <div class="language-item">Russian (Native)</div>
+            <div class="language-item">Hebrew (Native)</div>
+            <div class="language-item">French (Basic)</div>
+        </div>
+    </div>
 </body>
 </html>
