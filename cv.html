@@ -1,237 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dan Yasny - Infrastructure & Platform Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-primary: #fafbfc;
-            --bg-secondary: #ffffff;
-            --accent: #0969da;
-            --accent-hover: #0550ae;
-            --text-primary: #1f2328;
-            --text-secondary: #59636e;
-            --text-muted: #8b949e;
-            --border: #d1d9e0;
-            --shadow: rgba(31, 35, 40, 0.08);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            min-height: 100vh;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        
-        header {
-            text-align: center;
-            padding: 2.5rem 0 1.5rem;
-        }
-        
-        .name {
-            font-size: clamp(2rem, 5vw, 2.75rem);
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
-        }
-        
-        .title {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
-        
-        .button-group {
-            display: flex;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 1.5rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
-            font-family: 'Source Sans 3', sans-serif;
-            font-size: 0.9375rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.15s ease;
-            border: none;
-        }
-        
-        .btn-primary {
-            background: var(--accent);
-            color: #ffffff;
-            box-shadow: 0 1px 3px var(--shadow);
-        }
-        
-        .btn-primary:hover {
-            background: var(--accent-hover);
-            box-shadow: 0 3px 8px var(--shadow);
-        }
-        
-        .btn-secondary {
-            background: var(--bg-secondary);
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-        }
-        
-        .btn-secondary:hover {
-            background: var(--bg-primary);
-            border-color: var(--text-muted);
-        }
-        
-        .btn svg {
-            width: 18px;
-            height: 18px;
-        }
-        
-        .pdf-container {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px var(--shadow), 0 8px 24px var(--shadow);
-        }
-        
-        .pdf-embed {
-            width: 100%;
-            height: 85vh;
-            border: none;
-            display: block;
-        }
-        
-        .fallback {
-            padding: 4rem 2rem;
-            text-align: center;
-            color: var(--text-secondary);
-        }
-        
-        .fallback p {
-            margin-bottom: 1.5rem;
-            font-size: 1.0625rem;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 2rem 0;
-            color: var(--text-muted);
-            font-size: 0.875rem;
-        }
-        
-        footer a {
-            color: var(--accent);
-            text-decoration: none;
-        }
-        
-        footer a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            header {
-                padding: 1.5rem 0 1rem;
-            }
-            
-            .pdf-embed {
-                height: 70vh;
-            }
-            
-            .btn {
-                padding: 0.625rem 1rem;
-                font-size: 0.875rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Dan Yasny CV</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    color: #000;
+    line-height: 1.4;
+}
+h1 { margin-bottom: 5px; }
+h2 {
+    margin-top: 25px;
+    border-bottom: 1px solid #000;
+    font-size: 18px;
+}
+.section { margin-top: 15px; }
+.job-title { font-weight: bold; }
+.meta { margin-bottom: 5px; }
+ul { margin-top: 5px; }
+.small { font-size: 13px; }
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <header>
-            <h1 class="name">Dan Yasny</h1>
-            <p class="title">Infrastructure, Platform, DevOps and SRE Engineer</p>
-        </header>
-        
-        <div class="button-group">
-            <a href="files/Dan_Yasny_CV.pdf" download class="btn btn-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                Download PDF
-            </a>
-            <button id="fullscreenBtn" class="btn btn-secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-                </svg>
-                Fullscreen
-            </button>
-            <a href="files/Dan_Yasny_CV.pdf" target="_blank" class="btn btn-secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
-                Open in New Tab
-            </a>
-        </div>
-        
-        <div class="pdf-container" id="pdfContainer">
-            <object 
-                data="files/Dan_Yasny_CV.pdf" 
-                type="application/pdf" 
-                class="pdf-embed">
-                <div class="fallback">
-                    <p>PDF preview is not available in your browser.</p>
-                    <a href="files/Dan_Yasny_CV.pdf" download class="btn btn-primary">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                        </svg>
-                        Download PDF
-                    </a>
-                </div>
-            </object>
-        </div>
-        
-        <footer>
-            <p>© 2025 Dan Yasny · <a href="mailto:dyasny@gmail.com">dyasny@gmail.com</a> · <a href="https://linkedin.com/in/dyasny" target="_blank">LinkedIn</a></p>
-        </footer>
-    </div>
-    
-    <script>
-        document.getElementById('fullscreenBtn').addEventListener('click', function() {
-            const container = document.getElementById('pdfContainer');
-            if (container.requestFullscreen) {
-                container.requestFullscreen();
-            } else if (container.webkitRequestFullscreen) {
-                container.webkitRequestFullscreen();
-            } else if (container.msRequestFullscreen) {
-                container.msRequestFullscreen();
-            }
-        });
-    </script>
+
+<h1>Dan Yasny</h1>
+<div>Infrastructure, Platform, DevOps and SRE Engineer</div>
+<div>Montreal, Quebec, Canada</div>
+<div class="small">
+Phone: +1-438-888-5610 | Email: dyasny@gmail.com | LinkedIn: linkedin.com/in/dyasny
+</div>
+
+<h2>PROFESSIONAL SUMMARY</h2>
+<p>
+Experienced Infrastructure and platform engineer specializing in SRE, DevOps, Cloud, System Administration, Hardware,
+Software, Networking and Storage. Extensive knowledge of modern IT technologies, particularly in open source
+Virtualization, Containerization, Big Data, Cloud computing, AI (GPU, HPC) and Web3 infrastructure.
+</p>
+<p>
+Proven leadership skills with experience managing and developing teams while maintaining high quality standards and service awareness.
+</p>
+
+<h2>PROFESSIONAL EXPERIENCE</h2>
+
+<div class="section">
+<div class="job-title">AI Infrastructure Engineer — Member of Technical Staff</div>
+<div class="meta">Andromeda | Montreal, QC (Remote) | November 2025 - Present</div>
+<div><a href="https://andromeda.ai">https://andromeda.ai</a></div>
+<ul>
+<li>Lead the design and evolution of large-scale AI and GPU bare-metal infrastructure across multiple tier-1 GPU and cloud providers, driving reliability, performance, and cost efficiency at cluster and fleet level</li>
+<li>Own the GitOps and automation strategy for AI training platforms, management planes, and customer environments, establishing scalable patterns adopted across engineering teams</li>
+<li>Architect and operate a unified observability platform (metrics, logs, anomaly detection, alerting), significantly improving incident detection, MTTR, and system transparency for internal and customer-facing workloads</li>
+<li>Design and build a proprietary infrastructure orchestration layer enabling on-demand provisioning, burn-in validation, and secure connectivity for HPC and AI clusters, reducing deployment time and operational overhead</li>
+<li>Drive networking and security architecture for high-performance, multi-tenant environments</li>
+<li>Partner cross-functionally with product, infrastructure, and customer-facing teams to influence roadmap and technical direction</li>
+<li>Mentor engineers and promote best practices across infrastructure and reliability engineering</li>
+</ul>
+<div class="small">
+Keywords: GitOps, ArgoCD, git, Kubernetes, RKE2, Helm, Go, Python, Ansible, Docker, GKE, GCP, Terraform, Github, Github Actions,
+Automation, Wireguard, Tailscale, Nebula, Prometheus, Grafana, Loki, Alloy, Victoria Metrics, Victoria Logs, NVIDIA, Infiniband, KVM, Hosted Control Planes
+</div>
+</div>
+
+<div class="section">
+<div class="job-title">Staff Infrastructure Engineer</div>
+<div class="meta">Irreducible | Canada | November 2024 - November 2025</div>
+<ul>
+<li>Kubernetes implementation and migration</li>
+<li>CI/CD for Go, Rust, Terraform, Ansible, Verilator and FPGA oriented pipelines</li>
+<li>Ground-up architecture for secure and scalable infrastructure across public clouds and baremetal datacentres</li>
+<li>Automated internal and competitive benchmarking</li>
+<li>AWS and GCP integration for infrastructure architecture and DevOps workflows</li>
+<li>GitHub org management and IaC automation</li>
+</ul>
+</div>
+
+<div class="section">
+<div class="job-title">Lead DevOps Engineer</div>
+<div class="meta">Figment | Canada | July 2024 - November 2024</div>
+<ul>
+<li>Automation of infrastructure and blockchain operations across multiple networks</li>
+<li>Designed scalable, reliable staking infrastructure</li>
+<li>Improved workflows, automation, and upgrade processes</li>
+<li>Mentored engineers and collaborated across teams</li>
+</ul>
+</div>
+
+<div class="section">
+<div class="job-title">Senior Core Infrastructure / Performance / Site Reliability Engineer</div>
+<div class="meta">Kraken Digital Asset Exchange | Canada | September 2023 - July 2024</div>
+<div>(Details under NDA)</div>
+</div>
+
+<div class="section">
+<div class="job-title">Senior Infrastructure Engineer / Cloud Architect / Platform Engineer</div>
+<div class="meta">Turso | Canada | November 2021 - September 2023</div>
+<ul>
+<li>Led infrastructure design across cloud and on-prem environments</li>
+<li>Built managed services and CI/CD pipelines</li>
+<li>Designed distributed systems and automation frameworks</li>
+</ul>
+</div>
+
+<div class="section">
+<div class="job-title">Principal Field Engineer</div>
+<div class="meta">MayaData | Remote | January 2021 - November 2021</div>
+<ul>
+<li>Kubernetes and stateful workload expertise</li>
+<li>Sales engineering and solution design</li>
+</ul>
+</div>
+
+<div class="section">
+<div class="job-title">Head of Global Technical Support</div>
+<div class="meta">ScyllaDB | Montreal | September 2020 - November 2021</div>
+<ul>
+<li>Built and managed global support team</li>
+<li>Defined processes, escalation and reporting</li>
+</ul>
+</div>
+
+<h2>CORE TECHNICAL SKILLS</h2>
+<p><b>Cloud & DevOps:</b> AWS, GCP, Azure, OpenStack, Terraform, Ansible, Jenkins, GitHub Actions, ArgoCD</p>
+<p><b>Containers & Orchestration:</b> Kubernetes, OpenShift, Docker, Helm</p>
+<p><b>Programming & Scripting:</b> Python, Bash, Go, Rust</p>
+<p><b>Monitoring & Observability:</b> Prometheus, Grafana, Loki, Victoria Metrics</p>
+<p><b>Networking & Storage:</b> SDN, iSCSI, NFS, FC</p>
+
+<h2>EDUCATION</h2>
+<p>BA, Business Management | University of Derby | 2002 - 2005</p>
+
+<h2>CERTIFICATIONS</h2>
+<p>RHCVA • RHCE • Server+ • Linux+ • CNE</p>
+
+<h2>LANGUAGES</h2>
+<p>English (Native) • Russian (Native) • Hebrew (Native) • French (Basic)</p>
+
 </body>
 </html>
